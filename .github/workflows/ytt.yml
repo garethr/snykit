@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Generate Kubernetes configs using YTT 
-      run: ytt -f snykit.ytt -f values.ytt > dist/snykit.yaml
+      run: ytt -f snykit.yaml -f values.yaml > dist/snykit.yaml
     - uses: seanmiddleditch/gha-publish-to-git@master
       with:
         branch: master

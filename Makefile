@@ -1,7 +1,7 @@
 NAME : snykit
-CONFIG := snykit.ytt
+CONFIG := snykit.yaml
 
-RENDER = ytt -f $(CONFIG) -f values.ytt
+RENDER = ytt -f $(CONFIG) -f values.yaml
 BUILD = kbld -f -
 DEPLOY = kapp -a $(NAME) -f - -y
 
