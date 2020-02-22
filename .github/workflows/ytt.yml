@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - master
-name: YTT
+name: Build
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,7 +11,11 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Generate Kubernetes configs using YTT 
-      run: ytt -f snykit.yaml -f values.yaml > dist/snykit.yaml
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_BUILDKIT: "1"
+      run: ytt -f snykit.yaml -f values.yaml | kbld -f - > dist/snykit.yaml
     - uses: seanmiddleditch/gha-publish-to-git@master
       with:
         branch: master
