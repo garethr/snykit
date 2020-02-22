@@ -1,0 +1,6 @@
+#@data/values
+---
+name: snykit
+image: garethr/snykit
+port: 4567
+replicas: 1
