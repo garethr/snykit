@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+      - master
+name: YTT
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: k14s/image@sha256:e480fe67da1bd504a4a119bcd29fb20df6453e826889334b26f90e9a20112385
+    steps:
+    - uses: actions/checkout@master
+    - name: Generate Kubernetes configs using YTT 
+      run: ytt -f snykit.ytt -f values.ytt > dist/snykit.yaml
+    - uses: seanmiddleditch/gha-publish-to-git@master
+      with:
+        branch: master
+        github_token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+        commit_author: "gareth@morethanseven.net"
+        commit_message: Generated Kubernetes configuration from YTT source
