@@ -17,6 +17,7 @@ jobs:
         DOCKER_BUILDKIT: "1"
       run: |
         wget -qO- https://get.docker.com/ | sh
+        docker login --username ${DOCKER_USERNAME} --password ${DOCKER_PASSWORD}
         ytt -f snykit.yaml -f values.yaml | kbld -f - > dist/snykit.yaml
     - uses: seanmiddleditch/gha-publish-to-git@master
       with:
