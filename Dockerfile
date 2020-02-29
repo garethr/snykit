@@ -1,6 +1,6 @@
-ARG IMAGE=ruby:2.7.0-slim
+ARG BASE=ruby:2.7.0
 
-FROM ${IMAGE}
+FROM ${BASE}
 
 RUN bundle config --global frozen 1
 RUN bundle config set without "development test"
