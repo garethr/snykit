@@ -11,3 +11,9 @@ GitHub Actions is used to automatically build the images and generate a Kubernet
 ```console
 kubectl apply -f https://raw.githubusercontent.com/garethr/snykit/master/dist/snykit.yaml
 ```
+
+## Vulnerable?
+
+The application, and the associated image, have a few known vulnerabilities. We can use [Snyk](https://snyk.io/) to detect them. Snyk can be used via the CLI, or integrated with your CI system (including with [Actions](https://github.com/garethr/snykit/actions)) but in this case we've imported directly from GitHub and from Docker Hub.
+
+![Showing vulnerabilities in Snyk](assets/snyk.png)
