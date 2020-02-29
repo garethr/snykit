@@ -25,7 +25,7 @@ render: check-buildkit
 	@$(RENDER)
 
 push: check-buildkit
-	@$(DBUILD) -t $(IMAGE):slim .
-	@$(DBUILD) --build-arg BASE=ruby:2.7.0 -t $(IMAGE):latest .
-	@$(PUSH) $(IMAGE):slim
+	@$(DBUILD) -t $(IMAGE):latest .
+	@$(DBUILD) --build-arg BASE=ruby:2.7.0-slim -t $(IMAGE):slim .
 	@$(PUSH) $(IMAGE):latest
+	@$(PUSH) $(IMAGE):slim
