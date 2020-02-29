@@ -4,6 +4,7 @@ on:
       - master
     paths-ignore:
       - "dist/**"
+      - "README.md" 
 name: Template
 jobs:
   build:

@@ -3,7 +3,8 @@ name: Ruby
 on:
   push:
     paths-ignore:
-      - 'dist/**'
+      - "dist/**"
+      - "README.md"
 
 jobs:
   build:
