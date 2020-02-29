@@ -1,0 +1,18 @@
+on:
+  push:
+    branches:
+      - master
+name: Docker Hub
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Build and push tags to Docker Hub
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_BUILDKIT: "1"
+      run: |
+        docker login --username ${DOCKER_USERNAME} --password ${DOCKER_PASSWORD}
+        make push
