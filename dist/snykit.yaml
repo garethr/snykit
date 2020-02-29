@@ -26,7 +26,7 @@ metadata:
       - Metas:
         - Path: /__w/snykit/snykit
           Type: local
-        URL: index.docker.io/garethr/snykit@sha256:ae0e3b950007717fcc22beba155ec5f4cae2f1d1239ae03a3d1a1702abc9c20f
+        URL: index.docker.io/garethr/snykit@sha256:1ff413a03a726669ca1fba057f584c0874c7cc4c3fecd16a6f301f6f1ebaad26
   labels:
     app.kubernetes.io/instance: snykit
     app.kubernetes.io/name: snykit
@@ -45,7 +45,7 @@ spec:
         app.kubernetes.io/name: snykit
     spec:
       containers:
-      - image: index.docker.io/garethr/snykit@sha256:ae0e3b950007717fcc22beba155ec5f4cae2f1d1239ae03a3d1a1702abc9c20f
+      - image: index.docker.io/garethr/snykit@sha256:1ff413a03a726669ca1fba057f584c0874c7cc4c3fecd16a6f301f6f1ebaad26
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
