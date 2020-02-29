@@ -2,6 +2,8 @@ on:
   push:
     branches:
       - master
+    paths-ignore:
+      - "dist/**"
 name: Docker Hub
 jobs:
   build:
