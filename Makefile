@@ -1,9 +1,14 @@
-NAME : snykit
+NAME := snykit
+NAMESPACE := garethr
 CONFIG := snykit.yaml
+IMAGE := $(NAMESPACE)/$(NAME)
 
 RENDER = ytt -f $(CONFIG) -f values.yaml
 BUILD = kbld -f -
-DEPLOY = kapp -a $(NAME) -f - -y
+DEPLOY = kapp deploy -a $(NAME) -f - -y
+
+DBUILD = docker build
+PUSH = docker push
 
 check-buildkit:
 ifndef DOCKER_BUILDKIT
@@ -14,12 +19,13 @@ build: check-buildkit
 	@$(RENDER) | $(BUILD)
 
 deploy: check-buildkit
-	$(RENDER) | $(DEPLOY)
-
-build-and-deploy: check-buildkit
 	@$(RENDER) | $(BUILD) | $(DEPLOY)
 
 render: check-buildkit
 	@$(RENDER)
 
-
+push: check-buildkit
+	@$(DBUILD) -t $(IMAGE):slim .
+	@$(DBUILD) --build-arg BASE=ruby:2.7.0 -t $(IMAGE):latest .
+	@$(PUSH) $(IMAGE):slim
+	@$(PUSH) $(IMAGE):latest
