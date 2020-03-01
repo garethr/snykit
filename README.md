@@ -15,7 +15,7 @@ kubectl apply -f https://raw.githubusercontent.com/garethr/snykit/master/dist/sn
 Alternatively you can use `kapp` here as well:
 
 ```console
-kapp deploy -a snykit -f https://raw.githubusercontent.com/garethr/snykit/master/dist/snykit.yam
+kapp deploy -a snykit -f https://raw.githubusercontent.com/garethr/snykit/master/dist/snykit.yaml
 ```
 
 ## Vulnerable?
