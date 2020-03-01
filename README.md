@@ -20,6 +20,6 @@ kapp deploy -a snykit -f https://raw.githubusercontent.com/garethr/snykit/master
 
 ## Vulnerable?
 
-The application, and the associated image, have a few known vulnerabilities. We can use [Snyk](https://snyk.io/) to detect them. Snyk can be used via the CLI, or integrated with your CI system (including with [Actions](https://github.com/garethr/snykit/actions)) but in this case we've imported directly from GitHub and from Docker Hub.
+The application, and the associated image, have a few known vulnerabilities. We can use [Snyk](https://snyk.io/) to detect them. Snyk can be used via the CLI, or integrated with your CI system (including with [Actions](https://github.com/garethr/snykit/actions)) but in this case we've imported directly from GitHub, Docker Hub and the running application in Kubernetes.
 
 ![Showing vulnerabilities in Snyk](assets/snyk.png)
