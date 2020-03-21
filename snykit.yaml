@@ -55,6 +55,9 @@ spec:
             - name: http
               containerPort: #@ data.values.port
               protocol: TCP
+            - name: metrics
+              containerPort: #@ data.values.metrics_port
+              protocol: TCP
           livenessProbe:
             httpGet:
               path: /

@@ -12,6 +12,7 @@ RUN bundle install
 
 COPY . .
 
-EXPOSE 4567
+EXPOSE 3000
+EXPOSE 9393
 
-CMD ["bundle", "exec", "rackup", "--host", "0.0.0.0", "-p", "4567"]
+CMD ["bundle", "exec", "puma", "-C", "puma.rb"]

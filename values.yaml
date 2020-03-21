@@ -2,5 +2,6 @@
 ---
 name: snykit
 image: garethr/snykit
-port: 4567
+port: 3000
+port: 9393
 replicas: 1
