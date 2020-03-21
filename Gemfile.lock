@@ -6,7 +6,7 @@ GEM
       ruby2_keywords (~> 0.0.1)
     nio4r (2.5.2)
     prometheus-client (0.10.0)
-    puma (4.2.1)
+    puma (4.3.3)
       nio4r (~> 2.0)
     puma-metrics (1.1.0)
       prometheus-client (~> 0.10)
@@ -42,12 +42,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  puma (= 4.2.1)
-  puma-metrics
+  puma (= 4.3.3)
+  puma-metrics (>= 1.1.0)
   rack-test
   rake
   rspec
   sinatra (= 2.0.1)
 
 BUNDLED WITH
-   2.1.4
+   1.17.3
