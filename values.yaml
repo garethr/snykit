@@ -3,5 +3,5 @@
 name: snykit
 image: garethr/snykit
 port: 3000
-port: 9393
+metrics_port: 9393
 replicas: 1
