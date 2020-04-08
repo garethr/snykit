@@ -51,6 +51,9 @@ spec:
         - name: #@ data.values.name
           image: #@ data.values.image
           imagePullPolicy: IfNotPresent
+          securityContext:
+              runAsNonRoot: true
+              readOnlyRootFilesystem: true
           ports:
             - name: http
               containerPort: #@ data.values.port
