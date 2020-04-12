@@ -14,6 +14,6 @@ describe 'Server Service' do
   it "should load the page" do
     get '/'
     expect(last_response).to be_ok
-    expect(last_response.body).to include("Hello world!")
+    expect(last_response.body).to include("Hello world")
   end
 end
