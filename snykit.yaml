@@ -52,7 +52,6 @@ spec:
           image: #@ data.values.image
           imagePullPolicy: IfNotPresent
           securityContext:
-              runAsNonRoot: true
               readOnlyRootFilesystem: true
           ports:
             - name: http
