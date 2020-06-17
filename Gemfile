@@ -11,5 +11,5 @@ gem 'puma-metrics'
 group :test do
   gem 'rake'
   gem 'rspec'
-  gem 'rack-test'
+  gem 'rack-test', '>= 1.1.0'
 end
