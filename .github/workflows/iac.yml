@@ -12,6 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run Snyk to check for Kubernetes configuration issues 
+        continue-on-error: true
         uses: snyk/actions/iac@master
         with:
           file: dist/snykit.yaml
