@@ -5,6 +5,7 @@ on:
     paths-ignore:
       - "dist/**"
       - "README.md"
+  workflow_dispatch:
 
 jobs:
   build:
