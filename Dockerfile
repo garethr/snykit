@@ -1,6 +1,6 @@
-ARG BASE=ruby:2.7.0
+ARG BASE=ruby:2.7.6
 
-FROM ruby:2.7.0 as base
+FROM ruby:2.7.6 as base
 
 RUN bundle config --global frozen 1
 RUN bundle config set without "development test"
